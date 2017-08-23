@@ -8,7 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use AppBundle\Entity\ShortUrl;
 use AppBundle\Form\ShortUrlType;
-use Psr\Log\LoggerInterface;
 
 class DefaultController extends Controller
 {
@@ -37,8 +36,6 @@ class DefaultController extends Controller
 
     public function shorten($url_obj)
     {
-        //$logger = LoggerInterface::class;
-
         // Получаем данные
         $short_url = $url_obj->getShortUrl();
 
@@ -79,6 +76,8 @@ class DefaultController extends Controller
 
     /**
      * @Route("/clean", name="clean")
+     *
+     * Оформил в виде экшена. Но лучше з апускать по Cron'у
      */
     public function cleanAction()
     {
