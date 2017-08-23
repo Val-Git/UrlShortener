@@ -59,7 +59,7 @@ class DefaultController extends Controller
         $em->flush();
 
         // Генерируем короткую строку на основе ID
-        $code = $repository->idToStr($url_obj->getId());
+        $code = $short_url ?? $repository->idToStr($url_obj->getId());
 
         // Обновляем запись в БД
         $url_obj->setShortUrl($code);
