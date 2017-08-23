@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}URL Shortener - Test{% endblock %}</title>
+
+        {# Подключение стилей #}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        {% block stylesheets %}{% endblock %}
+        {# Подключаем favicon #}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {# Тело страницы #}
+        {% block body %}{% endblock %}
+        {# Подключение скриптов #}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
